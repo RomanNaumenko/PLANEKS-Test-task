@@ -7,24 +7,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 from django.conf import settings
 
-CHOICES = (
-
-    ('1', 'Choose...'),
-    ('2', 'name'),
-    ('3', 'job'),
-    ('4', 'company'),
-    ('5', 'date'),
-    ('6', 'phone'),
-    ('7', 'address'),
-    ('8', 'city'),
-    ('9', 'country'),
-    ('10', 'email')
-
-    )
-
 
 class Scheme(models.Model):
-
     upload = models.FileField(upload_to='', blank=True)
 
     name = models.CharField(max_length=30, default="None", blank=False)
@@ -34,35 +18,50 @@ class Scheme(models.Model):
         default=1
     )
 
-    c1 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c2 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c3 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c4 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c5 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c6 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c7 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c8 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
-    c9 = models.CharField(max_length=30, choices=CHOICES, default="Choose...")
+    types_of_data_choice = (('1', 'Choose from...'),
+                            ('2', 'Full name'),
+                            ('3', 'Job'),
+                            ('4', 'Email'),
+                            ('5', 'Domain Name'),
+                            ('6', 'Phone number'),
+                            ('7', 'Company name'),
+                            ('8', 'Text'),
+                            ('9', 'Integer'),
+                            ('10', 'Address'),
+                            ('11', 'Date'))
 
-    n1 = models.CharField(max_length=30, default="None", blank=True)
-    n2 = models.CharField(max_length=30, default="None", blank=True)
-    n3 = models.CharField(max_length=30, default="None", blank=True)
-    n4 = models.CharField(max_length=30, default="None", blank=True)
-    n5 = models.CharField(max_length=30, default="None", blank=True)
-    n6 = models.CharField(max_length=30, default="None", blank=True)
-    n7 = models.CharField(max_length=30, default="None", blank=True)
-    n8 = models.CharField(max_length=30, default="None", blank=True)
-    n9 = models.CharField(max_length=30, default="None", blank=True)
+    type_1 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_2 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_3 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_4 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_5 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_6 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_7 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_8 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_9 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
+    type_10 = models.CharField(max_length=30, choices=types_of_data_choice, default='Choose from...')
 
-    o1 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o2 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o5 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o6 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o7 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o8 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
-    o9 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9)])
+    name_1 = models.CharField(max_length=30, default="None", blank=True)
+    name_2 = models.CharField(max_length=30, default="None", blank=True)
+    name_3 = models.CharField(max_length=30, default="None", blank=True)
+    name_4 = models.CharField(max_length=30, default="None", blank=True)
+    name_5 = models.CharField(max_length=30, default="None", blank=True)
+    name_6 = models.CharField(max_length=30, default="None", blank=True)
+    name_7 = models.CharField(max_length=30, default="None", blank=True)
+    name_8 = models.CharField(max_length=30, default="None", blank=True)
+    name_9 = models.CharField(max_length=30, default="None", blank=True)
+    name_10 = models.CharField(max_length=30, default="None", blank=True)
+
+    order_1 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_2 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_5 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_6 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_7 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_8 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_9 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    order_10 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
 
     rows = models.IntegerField(default=1, validators=[MinValueValidator(1)])
 

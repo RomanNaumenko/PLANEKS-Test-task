@@ -203,193 +203,225 @@ a:hover, a:active {
                                         <tr>
                                             <td>{{ s.name }}</td>
                                             <td>
-{% if s.c1 == '1' %}
-{% elif s.c1 == '2' %} Name,
-{% elif s.c1 == '3' %} Job,
-{% elif s.c1 == '4' %} Company,
-{% elif s.c1 == '5' %} Date,
-{% elif s.c1 == '6' %} Phone number,
-{% elif s.c1 == '7' %} Address,
-{% elif s.c1 == '8' %} City,
-{% elif s.c1 == '9' %} Country,
-{% elif s.c1 == '10' %} E-mail
+{% if s.type_1 == '1' %}
+{% elif s.type_1 == '2' %} Full name,
+{% elif s.type_1 == '3' %} Job,
+{% elif s.type_1 == '4' %} Email,
+{% elif s.type_1 == '5' %} Domain Name,
+{% elif s.type_1 == '6' %} Phone number,
+{% elif s.type_1 == '7' %} Company name,
+{% elif s.type_1 == '8' %} Text,
+{% elif s.type_1 == '9' %} Integer,
+{% elif s.type_1 == '10' %} Address
+{% elif s.type_1 == '11' %} Date
 {% endif %}
 
 
-{% if s.c2 == '1' %}
-{% elif s.c2 == '2' %} Name,
-{% elif s.c2 == '3' %} Job,
-{% elif s.c2 == '4' %} Company,
-{% elif s.c2 == '5' %} Date,
-{% elif s.c2 == '6' %} Phone number,
-{% elif s.c2 == '7' %} Address,
-{% elif s.c2 == '8' %} City,
-{% elif s.c2 == '9' %} Country,
-{% elif s.c2 == '10' %} E-mail
+{% if s.type_2 == '1' %}
+{% elif s.type_2 == '2' %} Full name,
+{% elif s.type_2 == '3' %} Job,
+{% elif s.type_2 == '4' %} Email,
+{% elif s.type_2 == '5' %} Domain Name,
+{% elif s.type_2 == '6' %} Phone number,
+{% elif s.type_2 == '7' %} Company name,
+{% elif s.type_2 == '8' %} Text,
+{% elif s.type_2 == '9' %} Integer,
+{% elif s.type_2 == '10' %} Address
+{% elif s.type_2 == '11' %} Date
 {% endif %}
 
-{% if s.c3 == '1' %}
-{% elif s.c3 == '2' %} Name,
-{% elif s.c3 == '3' %} Job,
-{% elif s.c3 == '4' %} Company,
-{% elif s.c3 == '5' %} Date,
-{% elif s.c3 == '6' %} Phone number,
-{% elif s.c3 == '7' %} Address,
-{% elif s.c3 == '8' %} City,
-{% elif s.c3 == '9' %} Country,
-{% elif s.c3 == '10' %} E-mail
+{% if s.type_3 == '1' %}
+{% elif s.type_3 == '2' %} Full name,
+{% elif s.type_3 == '3' %} Job,
+{% elif s.type_3 == '4' %} Email,
+{% elif s.type_3 == '5' %} Domain Name,
+{% elif s.type_3 == '6' %} Phone number,
+{% elif s.type_3 == '7' %} Company name,
+{% elif s.type_3 == '8' %} Text,
+{% elif s.type_3 == '9' %} Integer,
+{% elif s.type_3 == '10' %} Address
+{% elif s.type_3 == '11' %} Date
 {% endif %}
 
-{% if s.c4 == '1' %}
-{% elif s.c4 == '2' %} Name,
-{% elif s.c4 == '3' %} Job,
-{% elif s.c4 == '4' %} Company,
-{% elif s.c4 == '5' %} Date,
-{% elif s.c4 == '6' %} Phone number,
-{% elif s.c4 == '7' %} Address,
-{% elif s.c4 == '8' %} City,
-{% elif s.c4 == '9' %} Country,
-{% elif s.c4 == '10' %} E-mail
+{% if s.type_4 == '1' %}
+{% elif s.type_4 == '2' %} Full name,
+{% elif s.type_4 == '3' %} Job,
+{% elif s.type_4 == '4' %} Email,
+{% elif s.type_4 == '5' %} Domain Name,
+{% elif s.type_4 == '6' %} Phone number,
+{% elif s.type_4 == '7' %} Company name,
+{% elif s.type_4 == '8' %} Text,
+{% elif s.type_4 == '9' %} Integer,
+{% elif s.type_4 == '10' %} Address
+{% elif s.type_4 == '11' %} Date
 {% endif %}
 
-{% if s.c5 == '1' %}
-{% elif s.c5 == '2' %} Name,
-{% elif s.c5 == '3' %} Job,
-{% elif s.c5 == '4' %} Company,
-{% elif s.c5 == '5' %} Date,
-{% elif s.c5 == '6' %} Phone number,
-{% elif s.c5 == '7' %} Address,
-{% elif s.c5 == '8' %} City,
-{% elif s.c5 == '9' %} Country,
-{% elif s.c5 == '10' %} E-mail
+{% if s.type_5 == '1' %}
+{% elif s.type_5 == '2' %} Full name,
+{% elif s.type_5 == '3' %} Job,
+{% elif s.type_5 == '4' %} Email,
+{% elif s.type_5 == '5' %} Domain Name,
+{% elif s.type_5 == '6' %} Phone number,
+{% elif s.type_5 == '7' %} Company name,
+{% elif s.type_5 == '8' %} Text,
+{% elif s.type_5 == '9' %} Integer,
+{% elif s.type_5 == '10' %} Address
+{% elif s.type_5 == '11' %} Date
 {% endif %}
 
-{% if s.c6 == '1' %}
-{% elif s.c6 == '2' %} Name,
-{% elif s.c6 == '3' %} Job,
-{% elif s.c6 == '4' %} Company,
-{% elif s.c6 == '5' %} Date,
-{% elif s.c6 == '6' %} Phone number,
-{% elif s.c6 == '7' %} Address,
-{% elif s.c6 == '8' %} City,
-{% elif s.c6 == '9' %} Country,
-{% elif s.c6 == '10' %} E-mail
+{% if s.type_6 == '1' %}
+{% elif s.type_6 == '2' %} Full name,
+{% elif s.type_6 == '3' %} Job,
+{% elif s.type_6 == '4' %} Email,
+{% elif s.type_6 == '5' %} Domain Name,
+{% elif s.type_6 == '6' %} Phone number,
+{% elif s.type_6 == '7' %} Company name,
+{% elif s.type_6 == '8' %} Text,
+{% elif s.type_6 == '9' %} Integer,
+{% elif s.type_6 == '10' %} Address
+{% elif s.type_6 == '11' %} Date
 {% endif %}
 
-{% if s.c7 == '1' %}
-{% elif s.c7 == '2' %} Name,
-{% elif s.c7 == '3' %} Job,
-{% elif s.c7 == '4' %} Company,
-{% elif s.c7 == '5' %} Date,
-{% elif s.c7 == '6' %} Phone number,
-{% elif s.c7 == '7' %} Address,
-{% elif s.c7 == '8' %} City,
-{% elif s.c7 == '9' %} Country,
-{% elif s.c7 == '10' %} E-mail
+{% if s.type_7 == '1' %}
+{% elif s.type_7 == '2' %} Full name,
+{% elif s.type_7 == '3' %} Job,
+{% elif s.type_7 == '4' %} Email,
+{% elif s.type_7 == '5' %} Domain Name,
+{% elif s.type_7 == '6' %} Phone number,
+{% elif s.type_7 == '7' %} Company name,
+{% elif s.type_7 == '8' %} Text,
+{% elif s.type_7 == '9' %} Integer,
+{% elif s.type_7 == '10' %} Address
+{% elif s.type_7 == '11' %} Date
 {% endif %}
 
-{% if s.c8 == '1' %}
-{% elif s.c8 == '2' %} Name,
-{% elif s.c8 == '3' %} Job,
-{% elif s.c8 == '4' %} Company,
-{% elif s.c8 == '5' %} Date,
-{% elif s.c8 == '6' %} Phone number,
-{% elif s.c8 == '7' %} Address,
-{% elif s.c8 == '8' %} City,
-{% elif s.c8 == '9' %} Country,
-{% elif s.c8 == '10' %} E-mail
+{% if s.type_8 == '1' %}
+{% elif s.type_8 == '2' %} Full name,
+{% elif s.type_8 == '3' %} Job,
+{% elif s.type_8 == '4' %} Email,
+{% elif s.type_8 == '5' %} Domain Name,
+{% elif s.type_8 == '6' %} Phone number,
+{% elif s.type_8 == '7' %} Company name,
+{% elif s.type_8 == '8' %} Text,
+{% elif s.type_8 == '9' %} Integer,
+{% elif s.type_8 == '10' %} Address
+{% elif s.type_8 == '11' %} Date
 {% endif %}
 
-{% if s.c9 == '1' %}
-{% elif s.c9 == '2' %} Name
-{% elif s.c9 == '3' %} Job
-{% elif s.c9 == '4' %} Company
-{% elif s.c9 == '5' %} Date
-{% elif s.c9 == '6' %} Phone number
-{% elif s.c9 == '7' %} Address
-{% elif s.c9 == '8' %} City
-{% elif s.c9 == '9' %} Country
-{% elif s.c9 == '10' %} E-mail
+{% if s.type_9 == '1' %}
+{% elif s.type_9 == '2' %} Full name,
+{% elif s.type_9 == '3' %} Job,
+{% elif s.type_9 == '4' %} Email,
+{% elif s.type_9 == '5' %} Domain Name,
+{% elif s.type_9 == '6' %} Phone number,
+{% elif s.type_9 == '7' %} Company name,
+{% elif s.type_9 == '8' %} Text,
+{% elif s.type_9 == '9' %} Integer,
+{% elif s.type_9 == '10' %} Address
+{% elif s.type_9 == '11' %} Date
+{% endif %}
+
+{% if s.type_10 == '1' %}
+{% elif s.type_10 == '2' %} Full name,
+{% elif s.type_10 == '3' %} Job,
+{% elif s.type_10 == '4' %} Email,
+{% elif s.type_10 == '5' %} Domain Name,
+{% elif s.type_10 == '6' %} Phone number,
+{% elif s.type_10 == '7' %} Company name,
+{% elif s.type_10 == '8' %} Text,
+{% elif s.type_10 == '9' %} Integer,
+{% elif s.type_10 == '10' %} Address
+{% elif s.type_10 == '11' %} Date
 {% endif %}
 
 </td>
 <td>
-{% if s.n1 != 'None' %}
-{{ s.n1 }},
+{% if s.name_1 != 'None' %}
+{{ s.name_1 }},
 {% endif %}
 
-{% if s.n2 != 'None' %}
-{{ s.n2 }},
+{% if s.name_2 != 'None' %}
+{{ s.name_2 }},
 {% endif %}
 
-{% if s.n3 != 'None' %}
-{{ s.n3 }},
+{% if s.name_3 != 'None' %}
+{{ s.name_3 }},
 {% endif %}
 
-{% if s.n4 != 'None' %}
-{{ s.n4 }},
+{% if s.name_4 != 'None' %}
+{{ s.name_4 }},
 {% endif %}
 
-{% if s.n5 != 'None' %}
-{{ s.n5 }},
+{% if s.name_5 != 'None' %}
+{{ s.name_5 }},
 {% endif %}
 
-{% if s.n6 != 'None' %}
-{{ s.n6 }},
+{% if s.name_6 != 'None' %}
+{{ s.name_6 }},
 {% endif %}
 
 
-{% if s.n7 != 'None' %}
-{{ s.n7 }},
+{% if s.name_7 != 'None' %}
+{{ s.name_7 }},
 {% endif %}
 
-{% if s.n8 != 'None' %}
-{{ s.n8 }},
+{% if s.name_8 != 'None' %}
+{{ s.name_8 }},
 {% endif %}
 
-{% if s.n9 != 'None' %}
-{{ s.n9 }}
+{% if s.name_9 != 'None' %}
+{{ s.name_9 }}
+{% endif %}
+
+{% if s.name_10 != 'None' %}
+{{ s.name_10 }}
 {% endif %}</td>
-
-
-                                            <td>
-{% if s.o1 != 0 %}
-{{ s.o1 }},
-{% endif %}
-
-{% if s.o2 != 0 %}
-{{ s.o2 }},
-{% endif %}
-
-{% if s.o3 != 0 %}
-{{ s.o3 }},
-{% endif %}
-
-{% if s.o4 != 0 %}
-{{ s.o4 }},
-{% endif %}
-
-{% if s.o5 != 0 %}
-{{ s.o5 }},
-{% endif %}
-
-{% if s.o6 != 0 %}
-{{ s.o6 }},
-{% endif %}
-
-{% if s.o7 != 0 %}
-{{ s.o7 }},
-{% endif %}
-
-{% if s.o8 != 0 %}
-{{ s.o8 }},
-{% endif %}
-
-{% if s.o9 != 0 %}
-{{ s.o9 }}
-{% endif %}
 </td>
-                                            <td>{% if s.upload == '' %}
+
+<td>
+{% if s.order_1 != 0 %}
+{{ s.order_1 }},
+{% endif %}
+
+{% if s.order_2 != 0 %}
+{{ s.order_2 }},
+{% endif %}
+
+{% if s.order_3 != 0 %}
+{{ s.order_3 }},
+{% endif %}
+
+{% if s.order_4 != 0 %}
+{{ s.order_4 }},
+{% endif %}
+
+{% if s.order_5 != 0 %}
+{{ s.order_5 }},
+{% endif %}
+
+{% if s.order_6 != 0 %}
+{{ s.order_6 }},
+{% endif %}
+
+{% if s.order_7 != 0 %}
+{{ s.order_7 }},
+{% endif %}
+
+{% if s.order_8 != 0 %}
+{{ s.order_8 }},
+{% endif %}
+
+{% if s.order_9 != 0 %}
+{{ s.order_9 }}
+{% endif %}
+
+{% if s.order_10 != 0 %}
+{{ s.order_10 }}
+{% endif %}
+
+</td>
+
+<td>{% if s.upload == '' %}
 No data generated yet
 {% elif s.upload == 'In Progress' %}
 <button  class="button buttonb">Generating file <img style=' width: 15px' class="rounded-circle" src="{% static 'images/loading.jpg' %}" > </button></div>
@@ -397,11 +429,7 @@ No data generated yet
 <button class="button buttong"> Ready </button>
 {% endif %}</td>
 
-
-
-
-
-                                            <td>{% if s.upload == '' %}
+<td>{% if s.upload == '' %}
 <a  href="/./do/{{ s.id }}/"><button class="button buttonb">Generate CSV</button></a>
 {% elif s.upload == 'In Progress' %}
 <button class="button buttongr" disabled>Generate CSV</button>

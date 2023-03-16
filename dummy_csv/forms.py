@@ -7,7 +7,7 @@ class SchemeForm(forms.ModelForm):
     class Meta:
         model = Scheme
         fields = ['name', 'author',
-                  'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9',
-                  'n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9',
-                  'o1', 'o2', 'o3', 'o4', 'o5', 'o6', 'o7', 'o8', 'o9',
+                  'type_1', 'type_2', 'type_3', 'type_4', 'type_5', 'type_6', 'type_7', 'type_8', 'type_9', 'type_10',
+                  'name_1', 'name_2', 'name_3', 'name_4', 'name_5', 'name_6', 'name_7', 'name_8', 'name_9', 'name_10',
+                  'order_1', 'order_2', 'order_3', 'order_4', 'order_5', 'order_6', 'order_7', 'order_8', 'order_9', 'order_10',
                   'rows']
