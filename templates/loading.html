@@ -1,3 +1,7 @@
+
+
+
+
 <!doctype html>
 {% load static %}
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -6,18 +10,21 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
 <style>
+
+
+
 a:link, a:visited {
- 
+
   color: black;
   padding: 1px 1px;
   text-align: center;
   text-decoration: none;
 
 }
-
 a:hover, a:active {
   background-color: none;
   color: black;
+}
 }
 .button {
   background-color: #4CAF50; /* Green */
@@ -28,69 +35,33 @@ a:hover, a:active {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 10px 2px;
+
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 12px;
 }
 
-.buttong {
-  background-color: lightgreen; 
-  color: black; 
-  -webkit-text-fill-color:  black;
-  border: 2px solid lightgreen;
-}
-
-
-
-.buttonb { 
-  background-color: lightblue; 
-  color: black; 
+.buttonb {
+  background-color: lightblue;
+  color: black;
   -webkit-text-fill-color:  black;
   border: 2px solid lightblue;
 }
 
-.buttonb:hover { 
+.buttonb:hover {
   background-color: white;
   color: black;
 }
 
-.buttonr {
-  background-color: #f44336; 
-  color: black;
-  border: 2px solid #f44336;
-}
 
-.buttonr:hover {
-  background-color: white;
-  color: black;
-}
 
-.buttongr {
-  background-color: #e7e7e7;
-  color: black;
-  border: 2px solid #e7e7e7;
-}
-
-.buttongr:hover {background-color: #e7e7e7;}
-
-.buttonbl {
-  background-color: #FFFACD;
-  color: black;
-  border: 2px solid #555555;
-}
-
-.buttonbl:hover {
-  background-color: white;
-  color: black;
-}
 
 
 </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Scheme Delete - Test Task</title>
-    <meta name="description" content="Scheme Delete - Test Task">
+    <title>Generating CSV - Test task</title>
+    <meta name="description" content="Generating CSV - Test task">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href='{% static "images/favicon.png" %}'>
@@ -122,13 +93,16 @@ a:hover, a:active {
                     <li>
                         <a href="/create"><i class="menu-icon ti-plus"></i>Create scheme </a>
                     </li>
-                  
-              
-      
+
+
+
                     <li>
                         <a href="/list"> <i class="menu-icon fa fa-table"></i>Scheme list</a>
                     </li>
-                    
+
+
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -144,17 +118,17 @@ a:hover, a:active {
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img style=' height: 40px'src='{% static "images/csv_logo.jpg" %}' alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src='{% static "images/csv_logo.jpg" %}' alt="Logo"></a>
+                    <a class="navbar-brand" href="registration"><img style=' height: 40px' src='{% static "images/csv_logo.jpg" %}' alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="registration"><img src='{% static "images/csv_logo.jpg" %}' alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
-                       
 
-      
+
+
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="menu-icon ti-user"></i>
@@ -163,7 +137,7 @@ a:hover, a:active {
                         <div class="user-menu dropdown-menu">
 
 
-                            <a class="nav-link" href="/./accounts/logout"><i class="fa fa-power-off"></i>Logout</a>
+                               <a class="nav-link" href="/./accounts/logout"><i class="fa fa-power-off"></i>Logout</a>
                         </div>
                     </div>
                 </div>
@@ -180,58 +154,42 @@ a:hover, a:active {
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Delete scheme</strong>
+                                <strong class="card-title">Generating CSV file</strong>
                             </div>
                             <div class="card-body">
-   
-
-
-<form action='.' method='POST'> {% csrf_token %}
-
-
-{% csrf_token %}
-
-	<p>Do you want to delete scheme "{{ object.name }}"?</p>
 
 
 
 
 
 
-
-<p><button style='  background-color: lightblue; 
-  color: black;
-  padding: 4px 32px;
-  text-align: top;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 12px;' class=buttonb type="submit">Yes</button> &nbsp;&nbsp;&nbsp;
-
-
-
-<a href="/list"><button class=buttonbl style='  background-color: lightgrey; 
-  color: black;
-  padding: 4px 32px;
-  text-align: top;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 12px;'>Cancel</button></a></p>
-
-
-	
+<div class='progress-wrapper'>
+  <div id='progress-bar' class='progress-bar' style="background-color: #68a9ef; width: 0%;">&nbsp;</div>
+</div>
+<p><div id="progress-bar-message">Waiting for task to start...</div> </p>
 
 
 
 
-                                
+
+<div style= 'font-style: italic; color: grey;' >You may leave this page safely, task is performed in background</div>
+
+<script src="{% static 'celery_progress/celery_progress.js' %}"></script>
+<script>
+// vanilla JS version
+document.addEventListener("DOMContentLoaded", function () {
+  var progressUrl = "{% url 'celery_progress:task_status' task_id %}";
+  CeleryProgressBar.initProgressBar(progressUrl);
+});
+</script>
+
+<script>
+// JQuery
+$(function () {
+  var progressUrl = "{% url 'celery_progress:task_status' task_id %}";
+  CeleryProgressBar.initProgressBar(progressUrl)
+});
+</script>
                             </div>
                         </div>
                     </div>
@@ -260,8 +218,8 @@ a:hover, a:active {
     <script src='{% static "assets/js/lib/data-table/dataTables.bootstrap.min.js" %}'></script>
     <script src='{% static "assets/js/lib/data-table/dataTables.buttons.min.js" %}'></script>
     <script src='{% static "assets/js/lib/data-table/buttons.bootstrap.min.js" %}'></script>
-    <script src='{% static "assets/js/lib/data-table/jszip.min.js"  %}'></script>
-    <script src='{% static "assets/js/lib/data-table/vfs_fonts.js"  %}'></script>
+    <script src='{% static "assets/js/lib/data-table/jszip.min.js" %}'></script>
+    <script src='{% static "assets/js/lib/data-table/vfs_fonts.js" %}'></script>
     <script src='{% static "assets/js/lib/data-table/buttons.html5.min.js" %}'></script>
     <script src='{% static "assets/js/lib/data-table/buttons.print.min.js" %}'></script>
     <script src='{% static "assets/js/lib/data-table/buttons.colVis.min.js" %}'></script>

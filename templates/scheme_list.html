@@ -44,10 +44,10 @@ a:hover, a:active {
 
 
 .buttonb {
-  background-color: lightblue;
+  background-color: dodgerblue;
   color: black;
   -webkit-text-fill-color:  black;
-  border: 2px solid lightblue;
+  border: 2px solid dodgerblue;
 }
 
 .buttonb:hover {
@@ -147,8 +147,8 @@ a:hover, a:active {
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img style=' height: 40px'src='{% static "images/logo1.png" %}' alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src='{% static "images/logo2.png" %}' alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img style=' height: 40px'src='{% static "images/csv_logo.jpg" %}' alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src='{% static "images/csv_logo.jpg" %}' alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -430,13 +430,12 @@ No data generated yet
 {% endif %}</td>
 
 <td>{% if s.upload == '' %}
-<a  href="/./do/{{ s.id }}/"><button class="button buttonb">Generate CSV</button></a>
+<a  href="/./generate/{{ s.id }}/"><button class="button buttonb">Generate CSV</button></a>
 {% elif s.upload == 'In Progress' %}
 <button class="button buttongr" disabled>Generate CSV</button>
 {% else %}
-<a href="/./do/{{ s.id }}/"><button class="button buttonb">Generate CSV</button></a>
+<a href="/./generate/{{ s.id }}/"><button class="button buttonb">Generate CSV</button></a>
 {% endif %}
-
 
 
 <a href="/./edit/{{ s.id }}/"><button  class="button buttonb">Edit</button></a>
@@ -448,7 +447,7 @@ No data generated yet
 {% elif s.upload == 'In Progress' %}
 <button class="button buttonb" disabled>Download</button>
 {% else %}
-<a href="{{ s.upload.url }}"><button class="button buttonb">Download</button></a>
+<a href="/./download/{{ s.id }}"><button class="button buttonb">Download</button></a>
 {% endif %}
                                             </td>
                                            {% endfor %}
