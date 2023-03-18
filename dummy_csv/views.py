@@ -9,6 +9,8 @@ from .dummy_data_generator import csv_data_generator
 import os
 import csv
 from django.conf import settings
+import os
+from pathlib import Path
 from django.http import HttpResponse, Http404
 
 
@@ -22,12 +24,19 @@ def scheme_listing(request):
 
 
 def media_download(request, id):
-
+    results = []
     query = Scheme.objects.get(id=id)
-    file = query.upload
+    file = query.upload.name
+    file_path = str(settings.BASE_DIR) + f'/{file}'
+    with open(file_path, 'r', encoding='UTF-8') as read_file:
+        reader = csv.reader(read_file, delimiter=',', quotechar=',')
+        for row in reader:
+            results.append(row)
+
     file_path = settings.MEDIA_ROOT
-    with open(f"{file_path}\\{file}", "w") as f:
-        csv.writer(f)
+    with open(f'{file_path}/{file}', 'a', encoding='UTF-8') as write_file:
+        writer = csv.writer(write_file)
+        writer.writerows(results)
 
     user = request.user
     query = Scheme.objects.filter(author=user.id)
@@ -144,8 +153,8 @@ def csv_generator_setting(request, id):
     print('Number of rows:')
     print(rows)
 
-    filename = str(scheme.author) + ' - ' + str(scheme.name) + ' - ' + str(
-        datetime.datetime.today().strftime('%Y-%m-%d_%H-%M-%S')) + '.csv'
+    filename = str(scheme.author) + '__' + str(scheme.name) + '__' + str(
+        datetime.datetime.today().strftime('%Y-%m-%d__%H-%M-%S')) + '.csv'
 
     csv_data_generator(rows, columns_content, names, filename, scheme_id, request)
     print(filename)

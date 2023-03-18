@@ -13,9 +13,6 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
     scheme.upload = 'Progressing...'
     scheme.save()
 
-    sleep(1)
-
-    # Data for CSV
     fake = Faker('uk_UA')  # adding nightingale locale
     # writing rows
     with open(filename, 'w', encoding='UTF-8',) as csvFile:
