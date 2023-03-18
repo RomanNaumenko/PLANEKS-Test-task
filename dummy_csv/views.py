@@ -121,9 +121,10 @@ def csv_generator_setting(request, id):
 
     filename = str(scheme.author) + '__' + str(scheme.name) + '__' + str(
         datetime.datetime.today().strftime('%Y-%m-%d__%H-%M-%S')) + '.csv'
-
+    rows = scheme.rows
+    
     csv_data_generator(rows, columns_content, names, filename, scheme_id, request)
-    print(filename)
+#     print(filename)
 
     user = request.user
     query = Scheme.objects.filter(author=user.id)
