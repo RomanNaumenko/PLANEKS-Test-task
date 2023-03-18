@@ -5,7 +5,6 @@ import csv
 from faker import Faker
 from dummy_csv.models import Scheme
 import datetime
-from time import sleep
 
 
 def csv_data_generator(records, columns, names, filename, scheme_id, req):
@@ -14,8 +13,8 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
     scheme.save()
 
     fake = Faker('uk_UA')  # adding nightingale locale
-    # writing rows
-    with open(filename, 'w', encoding='UTF-8',) as csvFile:
+
+    with open(filename, 'w', encoding='UTF-8', ) as csvFile:  # rows writing process
         writer = csv.writer(csvFile)
         if names:
             writer.writerow(names)
