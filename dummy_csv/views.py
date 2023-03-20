@@ -5,6 +5,7 @@ from django.shortcuts import *
 import datetime
 from .dummy_data_generator import csv_data_generator
 import csv
+from wsgiref.util import FileWrapper
 from django.conf import settings
 
 
@@ -20,21 +21,33 @@ def media_download(request, id):
     results = []
     query = Scheme.objects.get(id=id)
     file = query.upload.name
-    file_path = str(settings.BASE_DIR) + f'/{file}'
-    with open(file_path, 'r', encoding='UTF-8') as read_file:
+    file_path = settings.MEDIA_ROOT + f'/{file}'
+
+    with open(file_path, 'r') as read_file:
         reader = csv.reader(read_file, delimiter=',', quotechar=',')
         for row in reader:
             results.append(row)
 
-    file_path = settings.MEDIA_ROOT
-    with open(f'{file_path}/{file}', 'a', encoding='UTF-8') as write_file:
-        writer = csv.writer(write_file)
-        writer.writerows(results)
+    wrapper = FileWrapper(open(file_path))
+    response = HttpResponse(wrapper, content_type='text/csv')
+    response['Content-Disposition'] = f"attachment; filename={file}"
 
-    user = request.user
-    query = Scheme.objects.filter(author=user.id)
-    cntx = {"content": query}
-    return render(request, "scheme_list.html", cntx)
+    writer = csv.writer(response)
+    writer.writerows(results)
+
+    return response
+
+    #
+    # file_path = settings.MEDIA_ROOT
+    # with open(f'{file_path}/{file}', 'a', encoding='UTF-8') as write_file:
+    #     writer = csv.writer(write_file)
+    #     writer.writerows(results)
+    #
+    #
+    # # user = request.user
+    # # query = Scheme.objects.filter(author=user.id)
+    # # cntx = {"content": query}
+    # # return render(request, "scheme_list.html", cntx)
 
 
 def scheme_creation(request):
@@ -122,9 +135,9 @@ def csv_generator_setting(request, id):
     filename = str(scheme.author) + '__' + str(scheme.name) + '__' + str(
         datetime.datetime.today().strftime('%Y-%m-%d__%H-%M-%S')) + '.csv'
     rows = scheme.rows
-    
+
     csv_data_generator(rows, columns_content, names, filename, scheme_id, request)
-#     print(filename)
+    #     print(filename)
 
     user = request.user
     query = Scheme.objects.filter(author=user.id)

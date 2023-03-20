@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 import random
-
+from django.conf import settings
 import csv
 from faker import Faker
 from dummy_csv.models import Scheme
@@ -12,9 +12,10 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
     scheme.upload = 'Progressing...'
     scheme.save()
 
-    fake = Faker('uk_UA')  # adding nightingale locale
-
-    with open(filename, 'w', encoding='UTF-8', ) as csvFile:  # rows writing process
+    fake = Faker('en_US')
+    faker_phone = Faker('uk_UA')# adding nightingale locale
+    path = settings.MEDIA_ROOT + f"/{filename}"
+    with open(path, 'w') as csvFile:  # rows writing process
         writer = csv.writer(csvFile)
         if names:
             writer.writerow(names)
@@ -33,7 +34,7 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
                 'Job': fake.job(),
                 'Email': email,
                 'Domain Name': domain_name,
-                'Phone': fake.phone_number(),
+                'Phone': faker_phone.phone_number(),
                 'Company name': fake.company(),
                 'Text': fake.text(),
                 'Integer': random.randrange(0, 100),
