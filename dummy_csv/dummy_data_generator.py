@@ -13,7 +13,7 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
     scheme.save()
 
     fake = Faker('en_US')
-    faker_phone = Faker('uk_UA')# adding nightingale locale
+    fake_phone = Faker('uk_UA')# adding nightingale locale
     path = settings.MEDIA_ROOT + f"/{filename}"
     with open(path, 'w') as csvFile:  # rows writing process
         writer = csv.writer(csvFile)
@@ -25,16 +25,13 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
 
         for i in range(records):
 
-            email = fake.ascii_company_email()
-            domain_name = email.split("@")
-            domain_name = domain_name[1]
             gen_dict = {
 
                 'Full name': fake.name(),
                 'Job': fake.job(),
-                'Email': email,
-                'Domain Name': domain_name,
-                'Phone': faker_phone.phone_number(),
+                'Email': fake.ascii_company_email(),
+                'Domain Name': fake.domain_name(),
+                'Phone number': fake_phone.phone_number(),
                 'Company name': fake.company(),
                 'Text': fake.text(),
                 'Integer': random.randrange(0, 100),
@@ -52,5 +49,5 @@ def csv_data_generator(records, columns, names, filename, scheme_id, req):
 
         scheme.upload = filename
         scheme.save()
-
+    print(gen_dict)
     return filename + ' have been generated!'
