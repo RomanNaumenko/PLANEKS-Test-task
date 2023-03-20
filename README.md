@@ -12,6 +12,7 @@ CSV file) and order (just a number to manage column order).
 After creating the schema, the user should be able to input the number of
 records he/she needs to generate and press the “Generate data” button and download 
 it later if they wish.
+
 Note that every user need to generate data at least once before downloading the file.
 For the testing porpose I have created a test user:
 
@@ -29,5 +30,7 @@ is generated and botton 'Download' is pressed, file takes from the storage and r
 (pythonanywhere version). Both versions is absolutely common except path of data storage and
 saving.
 
+# Also
+Recommend to create empty folder '/PLANEKS-Test-task/media' before running.
 
 
