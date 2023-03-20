@@ -27,13 +27,10 @@ def media_download(request, id):
         reader = csv.reader(read_file, delimiter=',', quotechar=',')
         for row in reader:
             results.append(row)
-
+    print(results)
     wrapper = FileWrapper(open(file_path))
     response = HttpResponse(wrapper, content_type='text/csv')
     response['Content-Disposition'] = f"attachment; filename={file}"
-
-    writer = csv.writer(response)
-    writer.writerows(results)
 
     return response
 
